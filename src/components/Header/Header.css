@@ -1,11 +1,11 @@
 :root {
-    --header-background: #131921;
+    --header-dark-blue: #131921;
     --header-search-border-radius: .25rem;
     --header-yellow: #f0bf4c;
 }
 
 .header {
-    background-color: var(--header-background);
+    background-color: var(--header-dark-blue);
     height: 3.75rem;
     display: flex;
     z-index: 1000;
@@ -54,6 +54,7 @@
     margin: .7rem;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .header__nav__option {
@@ -63,6 +64,7 @@
 }
 
 .header__nav__option__smallerText {
+    font-size: small;
     font-weight: 100;
 }
 
@@ -76,7 +78,8 @@
 
 .header__nav__option__cart__items {
     background-color: var(--header-yellow);
-    color: black;
+    color: var(--header-dark-blue);
+    font-weight: 700;
     padding: .1rem;
     margin: .15rem;
     border-radius: 50%;

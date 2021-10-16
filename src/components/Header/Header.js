@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Header = () => {
-    let items = 1;
+    let items = 127;
     
     return (
         <div className="header">
@@ -57,7 +57,7 @@ const Header = () => {
                 {/* cart */}
                 <div className="header__nav__option__cart">
                     {/* cart icon */}
-                    <ShoppingCartIcon />
+                    <ShoppingCartIcon  fontSize="large" />
                     {
                         items ? 
                         <span className="header__nav__option__cart__items">{items}</span> : 

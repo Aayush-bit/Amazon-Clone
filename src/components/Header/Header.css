@@ -77,15 +77,8 @@
 }
 
 .header__nav__option__cart__items {
-    background-color: var(--header-yellow);
-    color: var(--header-dark-blue);
     font-weight: 700;
-    padding: .1rem;
-    margin: .15rem;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
 }

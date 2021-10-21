@@ -8,4 +8,10 @@
 .home__rows {
     position: relative;
     top: 20rem;
+    margin: auto;
+    width: 97%;
+}
+
+.home__row {
+    display: flex;
 }

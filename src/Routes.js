@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch } from "react-router-dom";
+import Checkout from './pages/Checkout/Checkout';
 
 // common routes
 import Home from "./pages/Home/Home"
@@ -20,6 +21,9 @@ const Routes = () => {
             </Route>
             <Route exact path="/login">
                 <Login/>
+            </Route>
+            <Route exact path="/checkout">
+                <Checkout/>
             </Route>
         </Switch>
     )

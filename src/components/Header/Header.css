@@ -15,6 +15,10 @@
     justify-content: space-around;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .header__logo {
     width: 7rem;
     transform: translate(0, .6rem);

@@ -55,7 +55,7 @@ const Header = () => {
                 </Link>
 
                 {/* cart */}
-                <div className="header__nav__option__cart">
+                <Link to="/checkout" className="header__nav__option__cart">
                     {/* cart icon */}
                     <ShoppingCartIcon  fontSize="large" />
                     {
@@ -63,7 +63,7 @@ const Header = () => {
                         <span className="header__nav__option__cart__items">{items}</span> : 
                         <></>
                     }
-                </div>
+                </Link>
             </div>
 
         </div>

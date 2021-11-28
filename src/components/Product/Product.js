@@ -4,12 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 import "./Product.css"
 import { StarBorder } from '@mui/icons-material';
 
-const Product = () => {
-    const title = "VRINDAVANBAZAAR.COM Krishna-Balaram Soft Toy Dolls- 8 inches- Soft and Stuffed Washable Toys";
-    const price = 20;
-    const numericRating = 4;
-    const productImage = "https://m.media-amazon.com/images/I/61sw43+4gRL._AC_UL480_FMwebp_QL65_.jpg";
-
+const Product = ({ title, price, rating, productImage }) => {
     return (
         <div className="product">
             {/* product title */}
@@ -20,12 +15,12 @@ const Product = () => {
             
             {/* product rating */}
             <p className="product__rating">
-                <StarIcon />
-                <StarIcon />
-                <StarIcon />
-                <StarIcon />
-                <StarIcon />
-                {/* <StarBorder /> */}
+                {Array(rating).fill().map((_, i) => <StarIcon />)}
+                {
+                    (5 - rating) > 0 ?
+                    Array(5 - rating).fill().map((_, i) => <StarBorder />) :
+                    <></>
+                }
             </p>
             
             {/* product image */}

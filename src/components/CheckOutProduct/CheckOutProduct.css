@@ -1,0 +1,27 @@
+.checkOutProduct {
+    display: flex;
+    width: 90%;
+    padding: 1rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.checkOutProduct__image {
+    object-fit: contain;
+    max-height: 15rem;
+    max-width: 11rem;
+    margin-right: 2rem;
+}
+
+.checkOutProduct__info > button {
+    background: #f0c14b;
+    border: 1px solid;
+    margin-top: .6rem;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    padding: .15rem;
+}
+
+/* .checkOutProduct__image {
+    width: 180px;
+    height: 180px;
+} */

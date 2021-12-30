@@ -7,6 +7,12 @@
 
 .checkout__left {
     width: 70%;
+    padding: .4rem;
+}
+
+.checkout__right {
+    width: 30%;
+    padding: .4rem;
 }
 
 .checkout__title {

@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom'
 import "./Header.css"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
+import { useStateValue } from '../../StateProvider';
+import { auth } from '../../firebase';
 
 const Header = () => {
-    let items = 127;
-    
+    const [{cart, user}, dispatch] = useStateValue();
+    const handleAuth = () => {
+        if (user) auth.signOut();
+    }
     return (
         <div className="header">
             {/* Logo  */}
@@ -27,14 +31,21 @@ const Header = () => {
             {/* header navigation -  sign in, orders, your prime, cart icon */}
             <div className="header__nav">
                 {/* sign in */}
-                <Link to ="/login" className="header__nav__option">
-                    <span className="header__nav__option__smallerText">
-                        hello
-                    </span>
-                    <span className="header__nav__option__biggerText">
-                        sign in
-                    </span>
-                </Link>
+                <div onClick={handleAuth}>
+                    <Link to ={!user && "/login"} className="header__nav__option">
+                        <span className="header__nav__option__smallerText">
+                            hello,{" "}
+                            {
+                                (user) ? user?.email : "guest"
+                            }
+                        </span>
+                        <span className="header__nav__option__biggerText">
+                            {
+                                (user) ? "sign out" : "sign in"
+                            }
+                        </span>
+                    </Link>
+                </div>
                 {/* returns and orders */}
                 <Link to ="/returns-and-orders" className="header__nav__option">
                     <span className="header__nav__option__smallerText">
@@ -59,8 +70,8 @@ const Header = () => {
                     {/* cart icon */}
                     <ShoppingCartIcon  fontSize="large" />
                     {
-                        items ? 
-                        <span className="header__nav__option__cart__items">{items}</span> : 
+                        cart?.length ? 
+                        <span className="header__nav__option__cart__items">{cart?.length}</span> : 
                         <></>
                     }
                 </Link>

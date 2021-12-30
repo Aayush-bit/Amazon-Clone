@@ -1,3 +1,4 @@
+import Payment from './pages/Payment/Payment';
 import React from 'react'
 import { Route, Switch } from "react-router-dom";
 import Checkout from './pages/Checkout/Checkout';
@@ -24,6 +25,9 @@ const Routes = () => {
             </Route>
             <Route exact path="/checkout">
                 <Checkout/>
+            </Route>
+            <Route exact path="/payment">
+                <Payment/>
             </Route>
         </Switch>
     )

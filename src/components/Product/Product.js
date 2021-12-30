@@ -1,10 +1,20 @@
-import { Button } from '@mui/material';
+// import { Button } from '@mui/material';
 import React from 'react'
 import StarIcon from '@mui/icons-material/Star';
 import "./Product.css"
 import { StarBorder } from '@mui/icons-material';
+import { useStateValue } from '../../StateProvider';
 
-const Product = ({ title, price, rating, productImage }) => {
+const Product = ({ id, title, price, rating, image }) => {
+    const [{cart}, dispatch] = useStateValue();
+    
+    const addToCart = () => {
+        dispatch({
+            type: 'ADD_TO_CART',
+            item: {id, title, price, rating, image}
+        });
+    }
+    
     return (
         <div className="product">
             {/* product title */}
@@ -24,11 +34,11 @@ const Product = ({ title, price, rating, productImage }) => {
             </p>
             
             {/* product image */}
-            <img className="product__image" src={productImage} alt={title} />
+            <img className="product__image" src={image} alt={title} />
             
             {/* CTA - add to cart */}
             <div className="product__addToCart">
-                <button>Add to Cart</button>
+                <button onClick={addToCart}>Add to Cart</button>
             </div>
         </div>
     )

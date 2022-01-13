@@ -1,0 +1,27 @@
+.payment {
+    background-color: white;
+}
+
+.payment__page-title {
+    text-align: center;
+    font-weight: 400;
+    text-transform: capitalize;
+    background-color: rgb(234, 237, 237);
+    padding: .6rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.payment__section {
+    display: flex;
+    padding: 1.2rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.payment__section__value {
+    flex: .8;
+}
+
+.payment__title {
+    text-transform: capitalize;
+    flex: .2;
+}

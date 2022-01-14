@@ -2,29 +2,12 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import "./Login.css"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-// import { addDoc, updateDoc, deleteDoc, collection, getDocs, doc } from 'firebase/firestore/lite';
-// import { query, where, onSnapshot } from 'firebase/firestore'
-import { auth, db } from '../../firebase';
+import { auth } from '../../firebase';
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory();
-
-    // // get all the items from the database and put them into dbData
-    // const getItems = async () => {
-    //     const itemsCol = collection(db, 'items');
-    //     const itemsSnapshot = await getDocs(itemsCol);
-                
-    //     setDbData(itemsSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()})));
-    //     setShowItems(true);
-    // }
-
-    // const deleteItem = async (e) => {
-    //     let itemId = e.target.value;
-    //     await deleteDoc(doc(db, "items", itemId));
-    // }
-    
     
     const signUpUser = () => {
         const user = createUserWithEmailAndPassword(auth, email, password)
